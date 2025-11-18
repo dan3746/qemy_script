@@ -35,14 +35,28 @@ Run the script from the command line with parameters:
 - KVM support enabled in the system for hardware acceleration.
 - Linux kernel supporting io_uring, if you want to enable that feature.
 
-## Extending the Script
+## Linters and Code Quality Tools
 
-You can extend the script to support additional options such as setting the amount of memory, number of CPU cores, networking setup, and other QEMU features by enhancing the run function and the argument parser.
+This project uses the following tools to ensure code quality and style:
 
-## Contact
+- flake8: for Python style checks (PEP8 compliance)
+- mypy: for static type checking using Python annotations
+- black: for automatic code formatting
 
-For questions or suggestions, please open an issue on GitHub or contact via email.
+## Setting Up Automatic Linting with pre-commit
 
----
+To automate running linters before each git commit, this project uses the [pre-commit](https://pre-commit.com/) framework.
 
-This script helps automate launching virtual machines with convenient command-line parameter control.
+### Installation
+
+Install pre-commit using pip:
+
+    pip install pre-commit
+
+Install the pre-commit git hooks:
+
+    pre-commit install
+
+You can manually run all hooks on all files with:
+
+    pre-commit run –all-files
